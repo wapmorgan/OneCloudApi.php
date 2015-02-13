@@ -35,7 +35,7 @@ $api->rebootServer(12345);
 $serverOperations = $api->getServerOperations(12345);
 
 // Server operation info
-$serverOperation = $api->getServerOperations(12345, 301234);
+$serverOperation = $api->getServerOperation(12345, 301234);
 ```
 
 # API documentation
