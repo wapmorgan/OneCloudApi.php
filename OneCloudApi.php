@@ -101,6 +101,8 @@ class OneCloudApi {
             }
             if (strcasecmp(strstr($response[$i], ':', true), 'Content-Length') === 0) {
                 $length = trim(strstr($response[$i], ':'), ":\r\n");
+                if ($length == 0)
+                    break;
             }
             $i++;
         }
