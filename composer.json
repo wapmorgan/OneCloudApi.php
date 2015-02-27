@@ -1,5 +1,5 @@
 {
-  "name": "wapmorgan/one-cloud-api",
+  "name": "wapmorgan/onecloud-api",
   "description": "1cloud.ru api binding",
   "autoload": {
     "classmap": ["OneCloudApi.php"]
