@@ -1,5 +1,10 @@
 # OneCloudApi.php
-API client for OneCloud
+API client for OneCloud.
+
+[![Latest Stable Version](https://poser.pugx.org/wapmorgan/onecloud-api/v/stable)](https://packagist.org/packages/wapmorgan/onecloud-api)
+[![Total Downloads](https://poser.pugx.org/wapmorgan/onecloud-api/downloads)](https://packagist.org/packages/wapmorgan/onecloud-api)
+[![License](https://poser.pugx.org/wapmorgan/onecloud-api/license)](https://packagist.org/packages/wapmorgan/onecloud-api)
+
 # Usage
 ```php
 $api = new OneCloudApi('secret-key-here', 2 /*adjust second parameter if script prints errors about socket timeout; by default there 1 sec*/);
