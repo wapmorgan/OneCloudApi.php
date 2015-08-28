@@ -1,6 +1,7 @@
 {
   "name": "wapmorgan/onecloud-api",
   "description": "1cloud.ru api binding",
+  "license": "MIT",
   "autoload": {
     "classmap": ["OneCloudApi.php"]
   }
