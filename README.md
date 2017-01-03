@@ -6,65 +6,65 @@ API client for OneCloud.
 [![Total Downloads](https://poser.pugx.org/wapmorgan/onecloud-api/downloads)](https://packagist.org/packages/wapmorgan/onecloud-api)
 [![License](https://poser.pugx.org/wapmorgan/onecloud-api/license)](https://packagist.org/packages/wapmorgan/onecloud-api)
 
-# Usage
-```php
-$api = new OneCloudApi('secret-key-here', 2 /*adjust second parameter if script prints errors about socket timeout; by default there 1 sec*/);
+# API
 
-// Images List
-$imagesList = $api->getImagesList();
+- `constructor OneCloudApi($secret_key[, $timeout = 1])`
 
-// Create Image from a server
-$image = $api->createImage('Image name', 'imageIdentificator', /*server id*/12345);
+   Adjust second parameter if script prints errors about socket timeout; by default there 1 sec;
 
-// Delete image
-$image = $api->deleteImage(12);
+### Images
 
-// Servers List
-$serversList = $api->getServersList();
+- `getImagesList(): array`
 
-// Server info
-$serverInfo = $api->getServerInfo(12345);
+  Returns images list
+- `createImage($imageName, $imageIdentificator, $serverId): boolean`
 
-// Create server
-$serverInfo = $api->createServer('Server name', /*cpu*/ 2, /*ram*/ 512, /*hdd*/ 10, /*image id*/7, /*disk type*/'SAS', /*high performance node*/false);
+  Create Image from a server
+- `deleteImage($imageIdentificator)`
 
-// Change server configuration
-$serverInfo = $api->changeServer(12345, /*cpu*/ 2, /*ram*/ 1024, /*hdd*/ 20, /*disk type*/'SAS', /*high performance node*/false);
+  Delete image
+  
+### Servers
 
-// Delete server
-$api->deleteServer(12345);
+- `getServersList(): array`
 
-// Turn on server
-$api->turnOnServer(12345);
+  Servers List
+- `getServerInfo($serverId): array`
 
-// Turn off server
-$api->turnOffServer(12345);
+  Server info
+- `createServer($serverName, $cpuCount, $ram, $hdd, $imageIdentificator, $diskType /*SAS or SSD*/, $isHighPerformance /* true or false */): array`
 
-// Reboot server
-$api->rebootServer(12345);
+  Create server
+- `changeServer($serverId, $cpuCount, $ram, $hdd, $diskType, $isHighPerformance): array`
 
-// Server operations history
-$serverOperations = $api->getServerOperations(12345);
+  Change server configuration
+- `deleteServer($serverId): boolean`
 
-// Server operation info
-$serverOperation = $api->getServerOperation(12345, 301234);
+  Delete server
+- `turnOnServer($serverId): boolean`, `turnOffServer($serverId): boolean`, `rebootServer($serverId): boolean`
 
-// Create network
-$network = $api->createNetwork('Name');
+  Turn on server, Turn off server, Reboot server
+- `getServerOperations($serverId): array`
 
-// Add server in network
-$api->addServerToNetwork(12345, 12);
+  Server operations history
+- `getServerOperation($serverId, $operationId): array`
 
-// Remove server from network
-$api->removeServerFromNetwork(12345, 12);
+  Server operation info
+- `createNetwork($networkName): array`
 
-// Network info
-$network = $api->getNetworkInfo(12);
+  Create network
+- `addServerToNetwork($serverId, $networkId): boolean`
 
-// Delete network
-$api->deleteNetwork(12);
+  Add server in network
+- `removeServerFromNetwork($serverId, $networkId): boolean`
 
-```
+  Remove server from network
+- `getNetworkInfo($networkId): array`
+
+  Network info
+- `deleteNetwork($networkId): boolean`
+
+  Delete network
 
 # API changes
 
