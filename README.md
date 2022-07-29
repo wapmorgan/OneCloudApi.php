@@ -1,7 +1,6 @@
 # OneCloudApi.php
 API client for OneCloud.
 
-[![Composer package](http://composer.network/badge/wapmorgan/onecloud-api)](https://packagist.org/packages/wapmorgan/onecloud-api)
 [![Latest Stable Version](https://poser.pugx.org/wapmorgan/onecloud-api/v/stable)](https://packagist.org/packages/wapmorgan/onecloud-api)
 [![Total Downloads](https://poser.pugx.org/wapmorgan/onecloud-api/downloads)](https://packagist.org/packages/wapmorgan/onecloud-api)
 [![License](https://poser.pugx.org/wapmorgan/onecloud-api/license)](https://packagist.org/packages/wapmorgan/onecloud-api)
