@@ -36,6 +36,16 @@ class OneCloudApi {
         $this->timeout = $timeout;
     }
 
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    public function getTimeout()
+    {
+        return $this->timeout;
+    }
+
     public function getImagesList() {
         return $this->apiCall(array('image'));
     }
