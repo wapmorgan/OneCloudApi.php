@@ -154,6 +154,11 @@ class OneCloudApi {
         return $this->apiCall(array('server', $id, 'action', $actionId));
     }
 
+    public function getDataCenters() 
+    {
+        return $this->apiCall(array('dcLocation'));
+    }
+    
     protected function apiCall(array $path, $method = 'GET', array $data = array()) {
         if (($sock = fsockopen('ssl://api.1cloud.ru', $this->port, $errno, $errstr, 3)) === false)
         {
