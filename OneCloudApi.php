@@ -158,7 +158,12 @@ class OneCloudApi {
     {
         return $this->apiCall(array('dcLocation'));
     }
-    
+
+    public function getSshKeys() 
+    {
+        return $this->apiCall(array('sshkey'));
+    }
+
     protected function apiCall(array $path, $method = 'GET', array $data = array()) {
         if (($sock = fsockopen('ssl://api.1cloud.ru', $this->port, $errno, $errstr, 3)) === false)
         {
