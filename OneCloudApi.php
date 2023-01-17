@@ -154,6 +154,30 @@ class OneCloudApi {
         return $this->apiCall(array('server', $id, 'action', $actionId));
     }
 
+    public function getDataCenters() 
+    {
+        return $this->apiCall(array('dcLocation'));
+    }
+
+    public function getSshKeys() 
+    {
+        return $this->apiCall(array('sshkey'));
+    }
+
+    public function createServerWithDataCenter($name, $cpu, $ram, $hdd, $imageId, $dc, $hddType, $sshKeysIds, $isHighPerformance = false) {
+        return $this->apiCall(array('server'), 'POST', array(
+            'Name' => $name,
+            'CPU' => $cpu,
+            'RAM' => $ram,
+            'HDD' => $hdd,
+            'ImageID' => $imageId,
+            'DCLocation' => $dc,
+            'HDDType' => $hddType,
+            'SshKeys' => $sshKeysIds,
+            'isHighPerformance' => $isHighPerformance,
+        ));
+    }
+    
     protected function apiCall(array $path, $method = 'GET', array $data = array()) {
         if (($sock = fsockopen('ssl://api.1cloud.ru', $this->port, $errno, $errstr, 3)) === false)
         {
